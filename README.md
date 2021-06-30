@@ -17,5 +17,5 @@ docker-compose run --rm node npm install create-next-app
 
 ### create sample app
 ~~~
-docker-compose run --rm node npx create-next-app sample-app --use-npm
+docker-compose run --rm node npx create-next-app sample-app --use-npm --ts
 ~~~
