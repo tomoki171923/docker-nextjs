@@ -1,12 +1,22 @@
 version: '3'
 services:
+  # develop mode
   node:
     build:
       context: .
       dockerfile: Dockerfile
+      target: base
     volumes:
-      - ./sample-app:/usr/src/app
-    command: sh -c "npm run dev" # develop mode
-    #command: sh -c "npm run build && npm run start" # production mode
+      - ./app:/usr/src/app
+    command: sh -c "npm run dev"
     ports:
       - "3000:3000"
+
+  # production mode
+  node_prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: prod
+    ports:
+      - "3333:3000"

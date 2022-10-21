@@ -1,0 +1,12 @@
+name: Generate Table of Contents
+on:
+  push:
+    branches:
+      - dev
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: tomoki171923/toc-generator@v4
+        with:
+          TARGET_PATHS: README*.md, */README*.md
